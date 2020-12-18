@@ -16,7 +16,7 @@ and leveraging  NLP in addition to information about the case.**
 
 **Throughout its History, in close cases, the SC has been fairly balanced in terms of the idealogies of its outcomes**
 
-![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/winningwords.png)
+![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/winning.png)
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/wordslosing.png)
 
 **Apparently the Supreme Court doesnt like New ideas!** But seriously, there is an alarming amount of similarities between the two classes. It appears lawyers at the highest level use mostly the same words. 
