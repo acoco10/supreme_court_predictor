@@ -7,7 +7,7 @@ and leveraging  NLP in addition to information about the case.**
 
 ## Exploratory Data Analysis Findings
 
-![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/Common-issues.png)
+![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/Common%20issues.png)
 
 **These are the top ten issues argueed before the Supreme Court when the petioner recieved a favorable and outcome and when they did not.** The two classes are fairly similar, but some differences can be inferred. It seems petitioners do worse in Antitrust cases, double jeopardy cases right to council and federal taxation cases. The petitioner seemingly does better in Habeas Corpus, sufficiency of evidence, liability, Civil Rights Act liability and judicial review of administrative proccesses cases.
 
