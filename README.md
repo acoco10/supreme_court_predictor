@@ -35,6 +35,9 @@ For cleaning the transcripts, I used JSON to break them down by speaker then fil
 
 ## Modeling
 
+![img]https://github.com/acoco10/supreme_court_predictor/blob/main/images/petitioner.png
+** There is a slight class imbalance within the data**
+
 I used TF-IDF scores in a sparse matrix to vectorize the transcripts. I first tried a random forest classifier(RCF) as a baseline model, achieving an accuracy of .58%. If you guessed that the petitioner would win every case you would be right more often that this model. A naive bayes classifier and a support vector model barely did better achieving accuracy scores of .5803 and .59 respectively. None of the models based solely on the text were very accurate and you would be better off just guessing that the petitioner won. However I had hope as they all achieve F1 scores around .7, indicating that they do have some ability to distinguish between the classes based on TFIDF scores. 
 
 After finding little advantage in using NLP, I turned to using categorical factors similar to other researchers. I used a logistic regression as a base line and achieved only 49% accuracy, far worse than guessing the dominant class. With an RFC model I managed an accuracy score of 63% better than any model before and legal expert predictions, but not great.
