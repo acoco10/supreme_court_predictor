@@ -55,3 +55,21 @@ While NLP is not a silver bullet for legal issues, when used in conjunction with
 3. Further segment the transcripts into each justice’s words and make a predictor for how each individual justice will vote 
 4. See if DOC2VEC can further improve my model since the transcripts are long and may be hard to quantify solely on TF-IDF scores. 
 
+## Repository Structure
+#### Notebooks
+  - Data cleaning
+  - EDA
+  - Modeling1 (NLP)
+  - Modeling2 (non NLP and combination model)
+#### Data
+  - Transcript Data
+  - SCDB CSV
+  - Text Data which was extracted for the justices and the petitioners in the data cleaning notebook
+#### Images
+  - graphs from the EDA which I used in my presentation and readme 
+ 
+ 
+ ## Presentation Slides for this Project
+ 
+ https://docs.google.com/presentation/d/1QUVTNoiegmGnHzAMduNHYqL7gzv7whqTw4LTw02laC4/edit?usp=sharing
+
