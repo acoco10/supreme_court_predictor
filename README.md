@@ -1,8 +1,8 @@
 # Using NLP and Machine Learning to Predict the Outcome of Close SC Cases
+![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/Scotusblogheader.png##) 
+Business problem:
 
-## Business problem:
-
-The SCOTUS blog wants to expand its coverage of oral arguments. They want to focus on close cases which are notoriously hard to predict(link). Natural Language Processing is a growing field of study for law and the SCOTUS blog wants to use language data from the transcripts of the oral arguments to create their own proprietary model. Past Machine learning models make predictions based on the factors of the case and justice behaviour. They also requested some exploratory data analysis (EDA) on the language and other factors that predict the outcome of Supreme Court cases that they can use for a blog post. 
+The [SCOTUS](https://www.scotusblog.com/) blog wants to expand its coverage of oral arguments. They want to focus on close cases which are notoriously hard to predict(link). Natural Language Processing is a growing field of study for law and the SCOTUS blog wants to use language data from the transcripts of the oral arguments to create their own proprietary model. Past Machine learning models make predictions based on the factors of the case and justice behaviour. They also requested some exploratory data analysis (EDA) on the language and other factors that predict the outcome of Supreme Court cases that they can use for a blog post. 
 
 Research has shown that legal experts only predict the outcome of a SC case right about 60% of the time. While much of the SCOTUS blog focuses on commentary, they have realized that expert opinion is not enough for predicting future cases. Other Machine learning models that make predictions based on the case factors, such as who won at a lower court and what the issue being argued was get it right about 70% of the time. SCOTUS blog wants their model to build on these models  by being tailored specifically towards close cases and leveraging  NLP in addition to information about the case. 
 
