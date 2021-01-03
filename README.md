@@ -23,15 +23,15 @@ The Supreme Court is the highest court in the United States. They hear appeals f
 
 *Respondent*- The party that won at the lower level and wants that decision reaffirmed
 
-*Liberal/ conservative outcome*- [Defined as follows in the SCDB](http://scdb.wustl.edu/), "In order to determine whether the Court supports or opposes the issue to which the case pertains, this variable codes the ideological "direction" of the decision. Specification of direction comports with conventional usage for the most part except for the interstate relations, private law, and the miscellaneous issues.*Justice* - One of the nine judges on the Supreme Court who vote on whether or not the case should be reversed or upheld. Justices are nominated by the president and Senate votes to confirm them. They have life tenure, so seats are only open when a current justice steps down or dies." **Note** that there is no consensus as to what exactly constitutes a liberal or conservative decision, follow the link to read the specificities of the SCDB definition. 
+*Liberal/ conservative outcome*- [Defined as follows in the SCDB](http://scdb.wustl.edu/), "In order to determine whether the Court supports or opposes the issue to which the case pertains, this variable codes the ideological "direction" of the decision. Specification of direction comports with conventional usage for the most part except for the interstate relations, private law, and the miscellaneous issues." **Note** that there is no consensus as to what exactly constitutes a liberal or conservative decision, follow the link to read the specificities of the SCDB definition. 
 
-*Chief Justice* - Has some additional authority, and is the administrator of many court proceedings but has no additional voting powers compared to the other justices. Appointed whenever there is an open Chief Justice seat in the same manner as the other justices, and not by seniority or a vote by the other justices.
+*Justice* - One of the nine judges on the Supreme Court who vote on whether or not the case should be reversed or upheld. Justices are nominated by the president and the Senate votes whether or not to confirm them. They have life tenure, so seats are only open when a current justice steps down or dies. 
+
+*Chief Justice* - Has some additional authority, and is the administrator of many court proceedings but has no additional voting powers compared to the other justices. Appointed whenever there is an open Chief Justice seat in the same manner as the other justices, and not by seniority or a vote by the SC.
 
 *Oral argument* - When the lawyers from both sides argue their case in front of the nine justices and are questioned by them. Oral arguments take place between October and April. The petitioner always goes first. Each side gets 30 minutes. The petitioner is allowed a five minute rebuttal at the end of argument, but still may only speak for 30 minutes total. 
 
-*Recess* - When the SC is not in session and deliberating and writing opinions for the cases they already heard. 
-
-*Opinion* - the written decision of the court, which is usually written by one justice on the winning side. Opinions typically take several months to write and are published as they are completed.
+*Opinion* - the written decision of the court, which is usually written by one justice on the winning side. Justices on either side may submit concurring or dissenting opinions, but they do not affect the overall outcome of the vote. Opinions typically take several months to write and are published as they are completed.
 
 ## Exploratory Data Analysis Findings
 
