@@ -1,10 +1,35 @@
 # Using NLP and Machine Learning to Predict the Outcome of Close SC Cases
-![sc_drawing](http://www.scotusdaily.com/wp-content/uploads/2017/12/xSC170626wide.jpg)
-[credit to the incredible courtroom artist Art Lien](https://courtartist.com/)
+
 ## Business problem:
 
-The Supreme Court decides on some of the most important legal and moral issues of our time and often shapes our nations approach to civil rights and liberties. Unfortunately the process for deliberating writing and releasing opinions can take [months](https://www.supremecourt.gov/about/procedures.aspx). Furthermore, the Court's behaviour can be hard to predict, especially in cases that have a close outcome. This can leave populations affected by the courts decisions in total limbo. By leveraging natural language processing (NLP), this project aims to predict the outcome of close cases based on the words spoken during the exchange between the petitioner and the Justices during oral argument. This will provide legal prognosticators and savvy news organizations another tool for making a prediction about close cases before the opinion is published. Research has shown that legal experts only predict the outcome of a SC case right about 60% of the [time](https://www.jstor.org/stable/4099370?seq=1). Other Machine learning models that make predictions based on the factors of the case and past justice behaviour are about [71% accurate](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0174698#sec006). This project will build on previous machine learning efforts by **being tailored specifically towards close cases 
-and leveraging  NLP in addition to information about the case.** 
+The SCOTUS blog wants to expand its coverage of oral arguments. They want to focus on close cases which are notoriously hard to predict(link). Natural Language Processing is a growing field of study for law and the SCOTUS blog wants to use language data from the transcripts of the oral arguments to create their own proprietary model. Past Machine learning models make predictions based on the factors of the case and justice behaviour. They also requested some exploratory data analysis (EDA) on the language and other factors that predict the outcome of Supreme Court cases that they can use for a blog post. 
+
+Research has shown that legal experts only predict the outcome of a SC case right about 60% of the time. While much of the SCOTUS blog focuses on commentary, they have realized that expert opinion is not enough for predicting future cases. Other Machine learning models that make predictions based on the case factors, such as who won at a lower court and what the issue being argued was get it right about 70% of the time. SCOTUS blog wants their model to build on these models  by being tailored specifically towards close cases and leveraging  NLP in addition to information about the case. 
+
+## Supreme Court 101
+
+![sc_drawing](http://www.scotusdaily.com/wp-content/uploads/2017/12/xSC170626wide.jpg)
+[credit to the incredible courtroom artist Art Lien](https://courtartist.com/)
+
+The Supreme Court is the highest court in the United States. They hear appeals from the federal courts, as well as state supreme courts, and also hear certain cases in the first instance (for example, when one state sues another).. The Supreme Court is tasked with interpreting the Constitution and federal law, and their interpretations are binding on lower federal courts and state courts. Most of the cases the Supreme Court hears are appeals, meaning that one party is unhappy with a court ruling and wants to reargue their case at a higher level. The Supreme Court has the authority to decide which cases it wants to hear appeals in, and only hears a small number of cases each year compared to other courts. 
+
+## Glossary 
+
+*Appeal* - to apply to a higher court for the reversal of a decision
+
+*Petitioner* -  The party that lost at the lower level and is attempting to appeal the case 
+
+*Respondent*- The party that won at the lower level and wants that decision reaffirmed
+
+*Liberal/ conservative outcome*- [Defined as follows in the SCDB](http://scdb.wustl.edu/), "In order to determine whether the Court supports or opposes the issue to which the case pertains, this variable codes the ideological "direction" of the decision. Specification of direction comports with conventional usage for the most part except for the interstate relations, private law, and the miscellaneous issues.*Justice* - One of the nine judges on the Supreme Court who vote on whether or not the case should be reversed or upheld. Justices are nominated by the president and Senate votes to confirm them. They have life tenure, so seats are only open when a current justice steps down or dies." **Note** that there is no consensus as to what exactly constitutes a liberal or conservative decision, follow the link to read the specificities of the SCDB definition. 
+
+*Chief Justice* - Has some additional authority, and is the administrator of many court proceedings but has no additional voting powers compared to the other justices. Appointed whenever there is an open Chief Justice seat in the same manner as the other justices, and not by seniority or a vote by the other justices.
+
+*Oral argument* - When the lawyers from both sides argue their case in front of the nine justices and are questioned by them. Oral arguments take place between October and April. The petitioner always goes first. Each side gets 30 minutes. The petitioner is allowed a five minute rebuttal at the end of argument, but still may only speak for 30 minutes total. 
+
+*Recess* - When the SC is not in session and deliberating and writing opinions for the cases they already heard. 
+
+*Opinion* - the written decision of the court, which is usually written by one justice on the winning side. Opinions typically take several months to write and are published as they are completed.
 
 ## Exploratory Data Analysis Findings
 
