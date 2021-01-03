@@ -35,10 +35,6 @@ The Supreme Court is the highest court in the United States. They hear appeals f
 
 ## Exploratory Data Analysis Findings
 
-![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/Common-issues.png)
-
-**These are the top ten issues argueed before the Supreme Court when the petioner recieved a favorable and outcome and when they did not.** The two classes are fairly similar, but some differences can be inferred. It seems petitioners do worse in Antitrust cases, double jeopardy cases right to council and federal taxation cases. The petitioner seemingly does better in Habeas Corpus, sufficiency of evidence, liability, Civil Rights Act liability and judicial review of administrative proccesses cases.
-
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/outcome_direction.png)
 
 **Throughout its History, in close cases, the SC has been fairly balanced in terms of the idealogies of its outcomes**
@@ -63,7 +59,7 @@ For cleaning the transcripts, I used JSON to break them down by speaker then fil
 ## Modeling
 
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/petitioner.png)
-** There is a slight class imbalance within the data**
+**There is a slight class imbalance within the data**
 
 I used TF-IDF scores in a sparse matrix to vectorize the transcripts. I first tried a random forest classifier(RCF) as a baseline model, achieving an accuracy of .58%. If you guessed that the petitioner would win every case you would be right more often that this model. A naive bayes classifier and a support vector model barely did better achieving accuracy scores of .5803 and .59 respectively. None of the models based solely on the text were very accurate and you would be better off just guessing that the petitioner won. However I had hope as they all achieve F1 scores around .7, indicating that they do have some ability to distinguish between the classes based on TFIDF scores. 
 
