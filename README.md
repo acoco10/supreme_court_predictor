@@ -1,6 +1,5 @@
 # Using NLP and Machine Learning to Predict the Outcome of Close SC Cases
-![sc_drawing](http://www.scotusdaily.com/wp-content/uploads/2017/12/xSC170626wide.jpg)
-[credit to the incredible courtroom artist Art Lien](https://courtartist.com/)
+
 ## Business problem:
 
 The SCOTUS blog wants to expand its coverage of oral arguments. They want to focus on close cases which are notoriously hard to predict(link). Natural Language Processing is a growing field of study for law and the SCOTUS blog wants to use language data from the transcripts of the oral arguments to create their own proprietary model. Past Machine learning models make predictions based on the factors of the case and justice behaviour. They also requested some exploratory data analysis (EDA) on the language and other factors that predict the outcome of Supreme Court cases that they can use for a blog post. 
@@ -8,6 +7,9 @@ The SCOTUS blog wants to expand its coverage of oral arguments. They want to foc
 Research has shown that legal experts only predict the outcome of a SC case right about 60% of the time. While much of the SCOTUS blog focuses on commentary, they have realized that expert opinion is not enough for predicting future cases. Other Machine learning models that make predictions based on the case factors, such as who won at a lower court and what the issue being argued was get it right about 70% of the time. SCOTUS blog wants their model to build on these models  by being tailored specifically towards close cases and leveraging  NLP in addition to information about the case. 
 
 ## Supreme Court 101
+
+![sc_drawing](http://www.scotusdaily.com/wp-content/uploads/2017/12/xSC170626wide.jpg)
+[credit to the incredible courtroom artist Art Lien](https://courtartist.com/)
 
 The Supreme Court is the highest court in the United States. They hear appeals from the federal courts, as well as state supreme courts, and also hear certain cases in the first instance (for example, when one state sues another).. The Supreme Court is tasked with interpreting the Constitution and federal law, and their interpretations are binding on lower federal courts and state courts. Most of the cases the Supreme Court hears are appeals, meaning that one party is unhappy with a court ruling and wants to reargue their case at a higher level. The Supreme Court has the authority to decide which cases it wants to hear appeals in, and only hears a small number of cases each year compared to other courts. 
 
@@ -19,7 +21,7 @@ The Supreme Court is the highest court in the United States. They hear appeals f
 
 *Respondent*- The party that won at the lower level and wants that decision reaffirmed
 
-*Liberal/ conservative outcome*- [Defined as follows in the SCDB](http://scdb.wustl.edu/), "In order to determine whether the Court supports or opposes the issue to which the case pertains, this variable codes the ideological "direction" of the decision. Specification of direction comports with conventional usage for the most part except for the interstate relations, private law, and the miscellaneous issues.*Justice* - One of the nine judges on the Supreme Court who vote on whether or not the case should be reversed or upheld. Justices are nominated by the president and Senate votes to confirm them. They have life tenure, so seats are only open when a current justice steps down or dies." Note that there is no consensus as to what exactly constitutes a liberal or conservative decision, follow the link to read the specificities of the SCDB definition. 
+*Liberal/ conservative outcome*- [Defined as follows in the SCDB](http://scdb.wustl.edu/), "In order to determine whether the Court supports or opposes the issue to which the case pertains, this variable codes the ideological "direction" of the decision. Specification of direction comports with conventional usage for the most part except for the interstate relations, private law, and the miscellaneous issues.*Justice* - One of the nine judges on the Supreme Court who vote on whether or not the case should be reversed or upheld. Justices are nominated by the president and Senate votes to confirm them. They have life tenure, so seats are only open when a current justice steps down or dies." **Note** that there is no consensus as to what exactly constitutes a liberal or conservative decision, follow the link to read the specificities of the SCDB definition. 
 
 *Chief Justice* - Has some additional authority, and is the administrator of many court proceedings but has no additional voting powers compared to the other justices. Appointed whenever there is an open Chief Justice seat in the same manner as the other justices, and not by seniority or a vote by the other justices.
 
