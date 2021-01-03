@@ -23,6 +23,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.metrics import recall_score, accuracy_score, confusion_matrix
 import string
+from unidecode import unidecode
 from nltk.probability import FreqDist
 import seaborn as sns
 
@@ -74,7 +75,8 @@ def get_justice_words (case, justices, caseldict, sct):
 def remove_non_ascii_chars(title):
     return "".join([unidecode(char).rstrip('()').rstrip(' ') for char in title])      
 
-
+def remove_non_ascii_chars_t(title):
+    return "".join([unidecode(char) for char in title])      
 # In[ ]:
 
 sw_list = stopwords.words('english')
@@ -89,9 +91,32 @@ def process_article(article):
     tokens = nltk.word_tokenize(article)
     stopwords_removed = [token.lower() for token in tokens if token.lower() not in sw_set]
     return stopwords_removed 
+lemmatizer = WordNetLemmatizer()
+def lemm_text(words):
+    lem = []
+    for word in words:
+        lem.append(lemmatizer.lemmatize(word))
+    return lem  
 
-
-
+class W2vVectorizer(object):
+    
+    def __init__(self, w2v):
+        # Takes in a dictionary of words and vectors as input
+        self.w2v = w2v
+        if len(w2v) == 0:
+            self.dimensions = 0
+        else:
+            self.dimensions = len(w2v[next(iter(wtv))])
+    
+    # Note: Even though it doesn't do anything, it's required that this object implement a fit method or else
+    # it can't be used in a scikit-learn pipeline  
+    def fit(self, X, y):
+        return self
+            
+    def transform(self, X):
+        return np.array([
+            np.mean([self.w2v[w] for w in words if w in self.w2v]
+                   or [np.zeros(self.dimensions)], axis=0) for words in X])
 
 
 
@@ -122,7 +147,7 @@ sw_list2 += ["''", '""', '...', '``', '’', '“', '’', '”', '‘', '‘', 
  'appeal',
  'district',
  'mean',
- 'use'] 
+ 'use' 'may', 'it', 'please', 'the', 'court', 'justice', 'thank', 'you', 'mrs'] 
 
 sw_set2 = set(sw_list2)
 
