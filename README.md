@@ -65,7 +65,7 @@ For cleaning the transcripts, I used JSON to break them down by speaker then fil
 
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/outcome_direction.png)
 
-**Throughout its History, in close cases, the SC has been fairly balanced in terms of the idealogies of its outcomes**
+**Throughout its History, in close cases, the SC has been fairly balanced in terms of the idealogies of its outcomes** Liberal outcomes were slightly more likely
 
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/wordswinning.png)
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/wordslosing.png)
@@ -81,17 +81,16 @@ While there is little difference between the disposition of the lower court ruli
 ## Modeling
 
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/petitioner.png)
-**There is a slight class imbalance within the data**
+**There is a slight class imbalance within the data** The Petitioner wins in close cases 20% more than the respondent
 
-I used TF-IDF scores in a sparse matrix to vectorize the transcripts. I first tried a random forest classifier(RCF) as a baseline model, achieving an accuracy of .58%. If you guessed that the petitioner would win every case you would be right more often that this model. A naive bayes classifier and a support vector model barely did better achieving accuracy scores of .5803 and .59 respectively. None of the models based solely on the text were very accurate and you would be better off just guessing that the petitioner won. However I had hope as they all achieve F1 scores around .7, indicating that they do have some ability to distinguish between the classes based on TFIDF scores. 
+I used TF-IDF scores in a sparse matrix to vectorize the transcripts. I first tried a random forest classifier(RCF) as a baseline model, achieving an accuracy of .58%. If you guessed that the petitioner would win every case you would be right more often that this model. A naive bayes classifier and a support vector model barely did better achieving accuracy scores of .5803 and .59 respectively. None of the models based solely on the text were very accurate and you would be better off just guessing that the petitioner won. However I had hope as they all achieve F1 scores around .7, indicating that they do have some ability to distinguish between the classes based on TFIDF scores. Worryingly, every model I tried was extremely overfit. After trying to reduce variance with a cross validated grid search, the Random Forest Classifier that resulted always predicted that the petitioner would win. 
 
-After finding little advantage in using NLP, I turned to using categorical factors similar to other researchers. I used a logistic regression as a base line and achieved only 49% accuracy, far worse than guessing the dominant class. With an RFC model I managed an accuracy score of 63% better than any model before and legal expert predictions, but not great.
+after finding little advantage in using NLP, I turned to using categorical factors similar to other researchers. I used a logistic regression as a base line and achieved only 49% accuracy, far worse than guessing the dominant class. With an RFC model I managed an accuracy score of 63% better than any model before and better than legal expert predictions, but not great.
 
-The breakthrough came when I found a synergistic effect between the text data and the categorical data. By taking my predictions from the NLP based naive bayes classifier and adding them as a feature in my RFC model I was able to reach a cross validated accuracy score of 77% , better than any of the models I found in my research and far better than the expert predictions referenced in Ruger et al.’s work. 
 
 ## Conclusions 
 
-While NLP is not a silver bullet for legal issues, when used in conjunction with other factors, it can be an invaluable asset and lead to highly accurate predictions for close Supreme Court case. It seems like there must be information about the case in the transcript of the arguments that categorical variables do not pick up on and vice versa.  My model would be suitable as evidence in a prediction on a Supreme Court case that is expected to be close, especially when the legal experts are generally inaccurate. Organizations can use my model to make accurate predictions about some of the issues that will shape our country. While I would never recommend it be used for legal decisions, hopefully it can have some use in helping predict contentious cases that change people’s lives. 
+Categorical models offer far more potential with less work, unfortunately I devoted alot of this project to NLP whish is mostly a deadend. My reccomendation would be to implement this model in the short term as 63% accurate on close cases is better than what experts can predict on all cases. Other machine learning models have had much more success then mine, so I think some significant feature engineering could lead to more promising results. My EDA would make for an interesting blog post but my model needs far more work to be useful for SCOTUSblog. There was just not significant language differences between the losing and the winning arguments.  
 
 ## Next Steps 
 
@@ -101,15 +100,19 @@ While NLP is not a silver bullet for legal issues, when used in conjunction with
 4. See if DOC2VEC can further improve my model since the transcripts are long and may be hard to quantify solely on TF-IDF scores. 
 
 ## Repository Structure
+README.md
 #### Notebooks
   - Data cleaning
   - EDA
   - Modeling1 (NLP)
-  - Modeling2 (non NLP and combination model)
+  - Modeling2 (non NLP)
 #### Data
-  - Transcript Data
+  - Supreme Court Case Transcripts repo
+    - Cases
+    - README
   - SCDB CSV
-  - Text Data which was extracted for the justices and the petitioners in the data cleaning notebook
+  - petitioner text data CSV
+  - justice text data CSV
 #### Images
   - graphs from the EDA which I used in my presentation and readme 
  
