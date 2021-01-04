@@ -100,6 +100,7 @@ Categorical models offer far more potential with less work, unfortunately I devo
 4. See if DOC2VEC can further improve my model since the transcripts are long and may be hard to quantify solely on TF-IDF scores. 
 
 ## Repository Structure
+<pre>
 README.md
 #### Notebooks
   - Data cleaning
@@ -115,7 +116,7 @@ README.md
   - justice text data CSV
 #### Images
   - graphs from the EDA which I used in my presentation and readme 
- 
+ <pre/>
  
  ## Presentation Slides for this Project
  
