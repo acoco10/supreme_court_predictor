@@ -33,6 +33,26 @@ The Supreme Court is the highest court in the United States. They hear appeals f
 
 *Opinion* - the written decision of the court, which is usually written by one justice on the winning side. Justices on either side may submit concurring or dissenting opinions, but they do not affect the overall outcome of the vote. Opinions typically take several months to write and are published as they are completed.
 
+## Data 
+
+The oral argument transcript data for this project was acquired on github and scraped from oyez.com. Many thanks go out to [Eric Wiener](https://github.com/EricWiener) for sharing his repo of scraped arguments. Additional information about the case, including the target variable of whether or not the petitioner won the case was found on [Washington University’s excellent Supreme Court Database](http://scdb.wustl.edu/). Professor Harold Spaeth and his team work are heros for working tirelessly to maintain and verify the accuracy of the SCDB. In the end about 3000 ‘close’ cases were used from 1946 until today. Close was defined as any case where the case was decided by a margin of 6-3 or less. 
+
+### Cleaning
+
+For cleaning the transcripts, I used JSON to break them down by speaker then filtered out only the petitioner words. This was an imperfect process as I could not find a complete list of the lawyers for each side, so the petitioner is just the first lawyer to speak even if they may have had multiple speakers or advocates. The data was then tokenized and stop words were removed. In addition to the english set of stop words I imported from the NLTK corpus I used the 20 most common words found in my data and some of the pleasentries used in every case, such as, "may it please the court."
+
+### Variables Used for Modeling
+
+*Lemmatized Words* - I used the Natural Language Toolkit (NLTK) to reduce each word to its base. An example would be removing ing from running to make it run. This makes it easier for models to percieve the possible differences between words. 
+*TFIDF Scores* - I used NLTK to calculate TFIDF scores for each word that appeared in the petitioners argument or said to the petitioner for each case.
+*Lower Court Disposition* - From the SCDB whether the outcome of the case was liberal or conservative as explained in the glossary. 
+*Natural Court* - Included in the SCDB, "A natural court is a period during which no personnel change occurs." I made a dummy variable for each of the 34 natural courts present in my dataset. 
+*Issue* - The legal issue the case revolves around, eg. search and siezure. I made all 249 issues present in my data set into dummy variables. 
+*Jurisdiction* - There are 15 different ways cases can reach the SC for consideration. The most well known way is on appeal, but another example is cases like inter state disputes can originate in the SC. I made a dummy variable for each manner. 
+*Case Source* - The Lower Court where the case orignated. There are 600 different options so I just let the Random Forest Model handle this category and did not include it in my logistic regression models. 
+*Petitioner* - There are different types of petitioners, such as an international party or the attorney general. The SCDB includes 600 different options so I also kept this one as is and only used it for more advanced models that could differentiate between the categories on their own. 
+*Winning Party* - My target variable, who recieved a favorable outcome in the case? Either the petitioner or the respondent. I dropped cases where a winner was unclear. 
+
 ## Exploratory Data Analysis Findings
 
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/outcome_direction.png)
@@ -48,13 +68,7 @@ The Supreme Court is the highest court in the United States. They hear appeals f
 
 While there is little difference between the disposition of the lower court ruling for winning petitioner arguments, it is clear that losing petitioner arguments are more likely to be conservative lower court outcomes, in other words, **the Supreme Court is more likely to uphold liberal lower court decisions.**
 
-## Data 
 
-The oral argument transcript data for this project was acquired on github and scraped from oyez.com. Many thanks go out to [Eric Wiener](https://github.com/EricWiener) for sharing his repo of scraped arguments. Additional information about the case, including the target variable of whether or not the petitioner won the case was found on [Washington University’s excellent Supreme Court Database](http://scdb.wustl.edu/). Professor Harold Spaeth and his team work are heros for working tirelessly to maintain and verify the accuracy of the SCDB. In the end about 3000 ‘close’ cases were used from 1946 until today. Close was defined as any case where the case was decided by a margin of 6-3 or less. 
-
-## Data Cleaning
-
-For cleaning the transcripts, I used JSON to break them down by speaker then filtered out only the petitioner words. This was an imperfect process as I could not find a complete list of the lawyers for each side, so the petitioner is just the first lawyer to speak even if they may have had multiple speakers or advocates. The data was then tokenized and lemmatized. 
 
 ## Modeling
 
