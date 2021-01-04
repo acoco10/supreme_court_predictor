@@ -101,22 +101,27 @@ Categorical models offer far more potential with less work, unfortunately I devo
 
 ## Repository Structure
 <pre>
-README.md
-#### Notebooks
-  - Data cleaning
-  - EDA
-  - Modeling1 (NLP)
-  - Modeling2 (non NLP)
-#### Data
-  - Supreme Court Case Transcripts repo
-    - Cases
-    - README
-  - SCDB CSV
-  - petitioner text data CSV
-  - justice text data CSV
-#### Images
-  - graphs from the EDA which I used in my presentation and readme 
- <pre/>
+├── data
+│   └── 
+├── images
+│   ├── common_issues.png
+│   ├── lcdisposition.png
+│   ├── most_common.png
+│   ├── outcome_direction.png
+│   ├── petioner.png
+│   ├── scdisposition.png
+│   └── Scotusblogheader.png
+│   └── wordslosing.png
+│   └── wordswinning.png├── notebooks
+├── notebooks
+|   ├── _pycache_   
+│   ├── SC_Predictor_Data_Cleaning_Notebook.ipynb   
+│   ├── SC_Predictor_EDA_notebook.ipynb
+│   ├── SC_Predictor_Modeling_Notebook1.ipynb
+│   ├── SC_Predictor_Modeling_Notebook2.ipynb
+└── src.py
+</pre>
+
  
  ## Presentation Slides for this Project
  
