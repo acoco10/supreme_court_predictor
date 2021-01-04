@@ -86,7 +86,7 @@ While there is little difference between the disposition of the lower court ruli
 I used TF-IDF scores in a sparse matrix to vectorize the transcripts. I first tried a random forest classifier(RCF) as a baseline model, achieving an accuracy of .58%. If you guessed that the petitioner would win every case you would be right more often that this model. A naive bayes classifier and a support vector model barely did better achieving accuracy scores of .5803 and .59 respectively. None of the models based solely on the text were very accurate and you would be better off just guessing that the petitioner won. However I had hope as they all achieve F1 scores around .7, indicating that they do have some ability to distinguish between the classes based on TFIDF scores. Worryingly, every model I tried was extremely overfit. After trying to reduce variance with a cross validated grid search, the Random Forest Classifier that resulted always predicted that the petitioner would win. 
 
 ![img](https://github.com/acoco10/supreme_court_predictor/blob/main/images/most%20important%20features.png)
-**Every strongly predictive factor was an issue besides the case being heard from CJ Roberts  3rd Natural Court** Interestingly, this court only had 8 justices on it until August when President Obama appointed Justice Sotomayor. Additionally [https://www.oyez.org/courts](there were 7 Republicans and only 1 Democrat on this court) which may have contributed. 
+**Every strongly predictive factor was an issue besides the case being heard from CJ Roberts  3rd Natural Court** Interestingly, this court only had 8 justices on it until August when President Obama appointed Justice Sotomayor. Additionally [there were 7 Republicans and only 1 Democrat on this court](https://www.oyez.org/courts) which may have contributed. 
 
 after finding little advantage in using NLP, I turned to using categorical factors similar to other researchers. I used a logistic regression as a base line and achieved only 59% accuracy about the same as my poor NLP models. With an RFC model I managed an accuracy score of 63% better than any model before and better than legal expert predictions, but not great.
 
@@ -133,9 +133,6 @@ Categorical models offer far more potential with less work, unfortunately I devo
 │   ├── SC_Predictor_Modeling_Notebook2.ipynb
 └── src.py
 </pre>
-
  
- ## Presentation Slides for this Project
- 
- https://docs.google.com/presentation/d/1QUVTNoiegmGnHzAMduNHYqL7gzv7whqTw4LTw02laC4/edit?usp=sharing
+ ### A presentation slide set for this project can be found [here](https://docs.google.com/presentation/d/1QUVTNoiegmGnHzAMduNHYqL7gzv7whqTw4LTw02laC4/edit?usp=sharing)
 
