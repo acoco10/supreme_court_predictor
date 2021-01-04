@@ -44,13 +44,21 @@ For cleaning the transcripts, I used JSON to break them down by speaker then fil
 ### Variables Used for Modeling
 
 *Lemmatized Words* - I used the Natural Language Toolkit (NLTK) to reduce each word to its base. An example would be removing ing from running to make it run. This makes it easier for models to percieve the possible differences between words. 
+
 *TFIDF Scores* - I used NLTK to calculate TFIDF scores for each word that appeared in the petitioners argument or said to the petitioner for each case.
+
 *Lower Court Disposition* - From the SCDB whether the outcome of the case was liberal or conservative as explained in the glossary. 
+
 *Natural Court* - Included in the SCDB, "A natural court is a period during which no personnel change occurs." I made a dummy variable for each of the 34 natural courts present in my dataset. 
+
 *Issue* - The legal issue the case revolves around, eg. search and siezure. I made all 249 issues present in my data set into dummy variables. 
+
 *Jurisdiction* - There are 15 different ways cases can reach the SC for consideration. The most well known way is on appeal, but another example is cases like inter state disputes can originate in the SC. I made a dummy variable for each manner. 
+
 *Case Source* - The Lower Court where the case orignated. There are 600 different options so I just let the Random Forest Model handle this category and did not include it in my logistic regression models. 
+
 *Petitioner* - There are different types of petitioners, such as an international party or the attorney general. The SCDB includes 600 different options so I also kept this one as is and only used it for more advanced models that could differentiate between the categories on their own. 
+
 *Winning Party* - My target variable, who recieved a favorable outcome in the case? Either the petitioner or the respondent. I dropped cases where a winner was unclear. 
 
 ## Exploratory Data Analysis Findings
