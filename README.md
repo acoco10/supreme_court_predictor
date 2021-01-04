@@ -102,7 +102,14 @@ Categorical models offer far more potential with less work, unfortunately I devo
 ## Repository Structure
 <pre>
 ├── data
-│   └── 
+│   ├── Final_justice.csv
+│   ├── Final_merge.csv
+│   ├── justices.csv
+│   ├── SCDB_2020_01_caseCentered_Citation.csv
+│   └──supreme-court-cases
+│      ├── cases
+│      ├── justices.js
+│      ├── README.md
 ├── images
 │   ├── common_issues.png
 │   ├── lcdisposition.png
@@ -110,9 +117,9 @@ Categorical models offer far more potential with less work, unfortunately I devo
 │   ├── outcome_direction.png
 │   ├── petioner.png
 │   ├── scdisposition.png
-│   └── Scotusblogheader.png
-│   └── wordslosing.png
-│   └── wordswinning.png├── notebooks
+│   ├── Scotusblogheader.png
+│   ├── wordslosing.png
+│   └── wordswinning.png
 ├── notebooks
 |   ├── _pycache_   
 │   ├── SC_Predictor_Data_Cleaning_Notebook.ipynb   
