@@ -82,9 +82,7 @@ def remove_non_ascii_chars_t(title):
 sw_list = stopwords.words('english')
 sw_list += list(string.punctuation)
 sw_list += ["''", '""', '...', '``', '’', '“', '’', '”', '‘', '‘', '©',"'"
-            'said', 'one', 'com', 'http', '-', '–', '—', 'co', 'wa', 'ha', '1', 'amp','court', 'would', 'case', 'say', 'think', 'state', 'well', 'make',
-       'right', 'question', 'mr', 'go', 'could', 'statute', 'yes',
-       'honor', 'fact', 'justice', 'law', 'time']
+            'said', 'one', 'com', 'http', '-', '–', '—', 'co', 'wa', 'ha', '1', 'amp','court', 'would', 'case', 'say', 'think', 'state', 'well', 'make','right', 'question', 'mr', 'go', 'could', 'statute', 'yes','honor', 'fact', 'justice', 'law', 'time', 'may','whether', 'take', 'get', 'act', 'know', 'point', 'issue', 'first', 'rule', 'give', 'government', 'federal', 'two', 'congress', 'judge','appeal', 'district','mean','use' 'may', 'it', 'please', 'the', 'court', 'justice', 'thank', 'you', 'mrs'] 
 sw_set = set(sw_list)
 
 def process_article(article):
@@ -125,29 +123,8 @@ class W2vVectorizer(object):
 
 sw_list2 = sw_list = stopwords.words('english')
 sw_list2 += list(string.punctuation)
-sw_list2 += ["''", '""', '...', '``', '’', '“', '’', '”', '‘', '‘', '©',"'"
-            'said', 'one', 'com', 'http', '-', '–', '—', 'co', 'wa', 'ha', '1', 'amp','court', 'would', 'case', 'say', 'think', 'state', 'well', 'make',
-       'right', 'question', 'mr', 'go', 'could', 'statute', 'yes',
-       'honor', 'fact', 'justice', 'law', 'time' 'may',
- 'whether',
- 'take',
- 'get',
- 'act',
- 'know',
- 'point',
- 'issue',
- 'first',
- 'rule',
- 'give',
- 'government',
- 'federal',
- 'two',
- 'congress',
- 'judge',
- 'appeal',
- 'district',
- 'mean',
- 'use' 'may', 'it', 'please', 'the', 'court', 'justice', 'thank', 'you', 'mrs'] 
+sw_list2 +=  ['decision', 'use', 'claim', 'section', 'way', 'find', 'come', 'trial', 'record', 'even', 'believe','year',
+ 'like','want', 'argument', 'also', 'evidence', 'hold', 'ask','brief', "''", '""', '...', '``', '’', '“', '’', '”', '‘', '‘', '©',"'" 'said', 'one', 'com', 'http', '-', '–', '—', 'co', 'wa', 'ha', '1', 'amp','court', 'would', 'case', 'say', 'think', 'state', 'well', 'make','right', 'question', 'mr', 'go', 'could', 'statute', 'yes','honor', 'fact', 'justice', 'law', 'time', 'may','whether', 'take', 'get', 'act', 'know', 'point', 'issue', 'first', 'rule', 'give', 'government', 'federal', 'two', 'congress', 'judge','appeal', 'district','mean','use' 'may', 'it', 'please', 'the', 'court', 'justice', 'thank', 'you', 'mrs'] 
 
 sw_set2 = set(sw_list2)
 
