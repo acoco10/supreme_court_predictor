@@ -37,9 +37,12 @@ def get_lawyers (case, justices):
         else:
             lawyers.append(x[0])
     return lawyers
-
-
-# In[ ]:
+def get_justices (case, justices):
+    justicesls = []
+    for x in case: 
+        if x[0] in justices:
+            justicesls.append(x[0])
+    return list(set([x[0] for x in case if x[0] in justices]))
 
 
 def get_petitioner_words (case, justices, caseldict, sct):
