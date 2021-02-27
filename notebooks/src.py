@@ -58,8 +58,20 @@ def get_petitioner_words (case, justices, caseldict, sct):
     return petitioner_words
 
 
-# In[ ]:
+def get_cases (justice, sct, jld):
+    lscases = []
+    for case in jld:
+        if justice in jld[case]:
+            lscases.append(case)
+    return lscases
 
+def get_specific_justice_words(justice, sct, jld):
+    cases = get_cases(justice, sct, jld)
+    ls_transcripts = []
+    for case in cases:
+        ls_transcripts.append(sct[case])
+    return ls_transcripts[0]   
+        
 
 def get_justice_words (case, justices, caseldict, sct):
     justice_words = []
