@@ -30,6 +30,7 @@ import seaborn as sns
 
 
 def get_lawyers (case, justices):
+ """get the lawyers speaking during a case"""
     lawyers = []
     for x in case: 
         if x[0] in justices or x[0] in lawyers:
@@ -37,7 +38,11 @@ def get_lawyers (case, justices):
         else:
             lawyers.append(x[0])
     return lawyers
+
+
+
 def get_justices (case, justices):
+    """ get the justices speaking in a case"""
     justicesls = []
     for x in case: 
         if x[0] in justices:
@@ -46,6 +51,7 @@ def get_justices (case, justices):
 
 
 def get_petitioner_words (case, justices, caseldict, sct):
+    """get the words said by the petitioner in a case"""
     petitioner_words = []
     words = sct[case]
     previous_speaker = words[0][0]
