@@ -65,6 +65,7 @@ def get_petitioner_words (case, justices, caseldict, sct):
 
 
 def get_cases (justice, sct, jld):
+    """get the cases a justice presided over"""
     lscases = []
     for case in jld:
         if justice in jld[case]:
