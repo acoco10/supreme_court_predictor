@@ -73,6 +73,7 @@ def get_cases (justice, sct, jld):
     return lscases
 
 def get_specific_justice_words(justice, sct, jld):
+    """ get the words said by one justice in all cases"""
     cases = get_cases(justice, sct, jld)
     ls_transcripts = []
     for case in cases:
